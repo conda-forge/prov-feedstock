@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: prov
@@ -7,29 +7,31 @@ package:
 source:
   fn: prov-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/prov/prov-{{ version }}.tar.gz
-  md5: 251576e384ab87eb68bee84697e863a3
+  sha256: 96a74efa1b3324961ff66246539ed7bdc06245dcbeef538688c755a0ad5777ee
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - python-dateutil
+    - python-dateutil >=2.2
     - networkx >=1.10
-    - lxml
-    - pydotplus
+    - lxml >=3.3.5
+    - pydotplus >=2.0.2
     - six >=1.9.0
+    - rdflib >=4.2.1
 
   run:
     - python
-    - python-dateutil
+    - python-dateutil >=2.2
     - networkx >=1.10
-    - lxml
-    - pydotplus
+    - lxml >=3.3.5
+    - pydotplus >=2.0.2
     - six >=1.9.0
+    - rdflib >=4.2.1
 
 test:
   # Python imports
@@ -47,3 +49,4 @@ extra:
   recipe-maintainers:
     - chrisfilo
     - satra
+    - trungdong
