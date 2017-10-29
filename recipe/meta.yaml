@@ -1,4 +1,4 @@
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: prov
@@ -6,8 +6,8 @@ package:
 
 source:
   fn: prov-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/prov/prov-{{ version }}.tar.gz
-  sha256: 96a74efa1b3324961ff66246539ed7bdc06245dcbeef538688c755a0ad5777ee
+  url: https://files.pythonhosted.org/packages/0a/80/bb3756a77340917a584fc0141fa70f4c51dac130724eca6033e847bdfdfa/prov-{{ version }}.tar.gz
+  sha256: 7a2d72b0df43cd9c6e374d815c8ce3cd5ca371d54f98f837853ac9fcc98aee4c
 
 build:
   number: 0
