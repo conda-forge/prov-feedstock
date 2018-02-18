@@ -14,9 +14,9 @@ Summary: A library for W3C Provenance Data Model supporting PROV-JSON and PROV-X
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/prov-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/prov-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/prov-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/prov-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/prov-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/prov-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/src-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/src-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/src-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/src-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/src-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/src-feedstock/branch/master)
 
 Current release info
 ====================
