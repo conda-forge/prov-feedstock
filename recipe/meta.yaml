@@ -1,13 +1,13 @@
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 
 package:
   name: prov
   version: {{ version }}
 
 source:
-  fn: prov-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/0a/80/bb3756a77340917a584fc0141fa70f4c51dac130724eca6033e847bdfdfa/prov-{{ version }}.tar.gz
-  sha256: 7a2d72b0df43cd9c6e374d815c8ce3cd5ca371d54f98f837853ac9fcc98aee4c
+  fn: {{ version }}.tar.gz
+  url: https://github.com/trungdong/prov/archive/{{ version }}.tar.gz
+  sha256: ac41970790216565b04db70a05c763a65b5cd48ca52c4e650e4b9e5e999c1ae0
 
 build:
   number: 0
@@ -18,20 +18,20 @@ requirements:
     - python
     - setuptools
     - python-dateutil >=2.2
-    - networkx >=1.10
+    - networkx >=2.0
     - lxml >=3.3.5
     - pydotplus >=2.0.2
     - six >=1.9.0
-    - rdflib >=4.2.1
+    - rdflib >=4.2.2
 
   run:
     - python
     - python-dateutil >=2.2
-    - networkx >=1.10
+    - networkx >=2.0
     - lxml >=3.3.5
     - pydotplus >=2.0.2
     - six >=1.9.0
-    - rdflib >=4.2.1
+    - rdflib >=4.2.2
 
 test:
   # Python imports
