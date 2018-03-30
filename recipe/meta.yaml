@@ -23,7 +23,7 @@ requirements:
     - pydotplus >=2.0.2
     - six >=1.9.0
     - rdflib >=4.2.2
-    - pydot>=1.2.0
+    - pydot >=1.2.0
 
   run:
     - python
