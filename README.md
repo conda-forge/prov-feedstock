@@ -14,14 +14,15 @@ Summary: A library for W3C Provenance Data Model supporting PROV-JSON and PROV-X
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/src-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/src-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/src-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/src-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/src-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/src-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/prov-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/prov-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/prov/badges/version.svg)](https://anaconda.org/conda-forge/prov)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/prov/badges/downloads.svg)](https://anaconda.org/conda-forge/prov)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-prov-green.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) |
 
 Installing prov
 ===============
