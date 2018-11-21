@@ -1,4 +1,4 @@
-{% set version = "1.5.2" %}
+{% set version = "1.5.3" %}
 
 package:
   name: prov
@@ -7,11 +7,11 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/trungdong/prov/archive/{{ version }}.tar.gz
-  sha256: ac41970790216565b04db70a05c763a65b5cd48ca52c4e650e4b9e5e999c1ae0
+  sha256: 499b46dfc96ed88dd7ca28ff0fdb89a7c9bd8e4956857efd3aa31fa97313a538
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
