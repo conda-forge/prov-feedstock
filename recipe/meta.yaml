@@ -1,4 +1,4 @@
-{% set version = "1.5.1" %}
+{% set version = "1.5.3" %}
 
 package:
   name: prov
@@ -7,11 +7,11 @@ package:
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/trungdong/prov/archive/{{ version }}.tar.gz
-  sha256: 527ce639cdd06e09db5f04ca9f1ac855721dafbc015c69933f65dcef71b132d2
+  sha256: 499b46dfc96ed88dd7ca28ff0fdb89a7c9bd8e4956857efd3aa31fa97313a538
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -20,20 +20,20 @@ requirements:
     - python
     - setuptools
     - python-dateutil >=2.2
-    - networkx >=1.10
+    - networkx >=2.0
     - lxml >=3.3.5
     - pydotplus >=2.0.2
     - six >=1.9.0
-    - rdflib >=4.2.1
+    - rdflib >=4.2.2
 
   run:
     - python
     - python-dateutil >=2.2
-    - networkx >=1.10
+    - networkx >=2.0
     - lxml >=3.3.5
     - pydotplus >=2.0.2
     - six >=1.9.0
-    - rdflib >=4.2.1
+    - rdflib >=4.2.2
 
 test:
   # Python imports
