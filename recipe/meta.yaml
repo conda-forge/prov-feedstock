@@ -1,26 +1,26 @@
-{% set version = "1.5.2" %}
+{% set version = "1.5.3" %}
 
 package:
   name: prov
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
-  url: https://github.com/trungdong/prov/archive/{{ version }}.tar.gz
-  sha256: ac41970790216565b04db70a05c763a65b5cd48ca52c4e650e4b9e5e999c1ae0
+  url: https://pypi.io/packages/source/p/prov/prov-{{ version }}.tar.gz
+  sha256: a0c951107eafd508d5a26caa54863dc11fee3da86778db2a559d32450d2030a9
 
 build:
   number: 1
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
     - python-dateutil >=2.2
     - networkx >=2.0
     - lxml >=3.3.5
-    - pydotplus >=2.0.2
     - six >=1.9.0
     - rdflib >=4.2.2
     - pydot >=1.2.0
@@ -30,9 +30,9 @@ requirements:
     - python-dateutil >=2.2
     - networkx >=2.0
     - lxml >=3.3.5
-    - pydotplus >=2.0.2
     - six >=1.9.0
     - rdflib >=4.2.2
+    - pydot>=1.2.0
 
 test:
   # Python imports
