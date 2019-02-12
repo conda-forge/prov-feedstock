@@ -5,14 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
-  url: https://github.com/trungdong/prov/archive/{{ version }}.tar.gz
-  sha256: 499b46dfc96ed88dd7ca28ff0fdb89a7c9bd8e4956857efd3aa31fa97313a538
+  url: https://pypi.io/packages/source/p/prov/prov-{{ version }}.tar.gz
+  sha256: a0c951107eafd508d5a26caa54863dc11fee3da86778db2a559d32450d2030a9
 
 build:
+  number: 1
   noarch: python
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
@@ -22,18 +21,18 @@ requirements:
     - python-dateutil >=2.2
     - networkx >=2.0
     - lxml >=3.3.5
-    - pydotplus >=2.0.2
     - six >=1.9.0
     - rdflib >=4.2.2
+    - pydot >=1.2.0
 
   run:
     - python
     - python-dateutil >=2.2
     - networkx >=2.0
     - lxml >=3.3.5
-    - pydotplus >=2.0.2
     - six >=1.9.0
     - rdflib >=4.2.2
+    - pydot >=1.2.0
 
 test:
   # Python imports
