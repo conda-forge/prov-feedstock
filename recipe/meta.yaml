@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: prov
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/prov/prov-{{ version }}.tar.gz
-  sha256: 841d3a953af65d27266959eeefeff09b24b7ca8d10b090420537014b0da892bb
+  sha256: b6ac0c7cfabd268b2689a406e62c4dc5eaa6895ca877565fc73ab008f4e3eb7e
 
 build:
   number: 0
@@ -17,35 +17,35 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - networkx >=2.0
-    - lxml >=3.3.5
-    - six >=1.9.0
-    - rdflib >=6.0.0,<8
-    - pydot >=1.2.0
+    - setuptools
+    - wheel
 
   run:
     - python >={{ python_min }}
     - python-dateutil >=2.2
     - networkx >=2.0
-    - lxml >=3.3.5
-    - six >=1.9.0
-    - rdflib >=6.0.0,<8
     - pydot >=1.2.0
+    - lxml >=3.3.5
+    - rdflib >=6.0.0,<8
 
 test:
-  # Python imports
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - prov
     - prov.serializers
-    - prov.tests
+    - prov.model
+  commands:
+    - pip check
+    - prov-convert --help
+    - prov-compare --help
 
 about:
   home: https://github.com/trungdong/prov
   license: MIT
   license_file: LICENSE
-  summary: A library for W3C Provenance Data Model supporting PROV-JSON and PROV-XML
+  summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML and PROV-O (RDF)
 
 extra:
   recipe-maintainers:
