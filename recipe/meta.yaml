@@ -18,36 +18,34 @@ requirements:
     - pip
     - python {{ python_min }}
     - setuptools
-    - python-dateutil >=2.2
-    - networkx >=2.0
-    - lxml >=3.3.5
-    - six >=1.9.0
-    - rdflib >=4.2.2
-    - pydot >=1.2.0
+    - wheel
 
   run:
     - python >={{ python_min }}
     - python-dateutil >=2.2
     - networkx >=2.0
-    - lxml >=3.3.5
-    - six >=1.9.0
-    - rdflib >=4.2.2
     - pydot >=1.2.0
+    - lxml >=3.3.5
+    - rdflib >=6.0.0,<8
 
 test:
-  # Python imports
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - prov
     - prov.serializers
-    - prov.tests
+    - prov.model
+  commands:
+    - pip check
+    - prov-convert --help
+    - prov-compare --help
 
 about:
   home: https://github.com/trungdong/prov
   license: MIT
   license_file: LICENSE
-  summary: A library for W3C Provenance Data Model supporting PROV-JSON and PROV-XML
+  summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML and PROV-O (RDF)
 
 extra:
   recipe-maintainers:
