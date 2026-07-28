@@ -7,7 +7,7 @@ Home: https://github.com/trungdong/prov
 
 Package license: MIT
 
-Summary: A library for W3C Provenance Data Model supporting PROV-JSON and PROV-XML
+Summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML and PROV-O (RDF)
 
 Current build status
 ====================

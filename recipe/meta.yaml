@@ -1,4 +1,4 @@
-{% set version = "2.5.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: prov
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/prov/prov-{{ version }}.tar.gz
-  sha256: be139a3328693a3122a8d26fec827e53e33e0adcfb2a9e7a8c95d1a6b8c446bc
+  sha256: 9355b139f1ef796f74ca039e37d58b9d9d83f1820678d65ab03dc3e864ed0c0d
 
 build:
   number: 0
@@ -21,12 +21,14 @@ requirements:
     - wheel
 
   run:
+    # prov 3.0 has no unconditional runtime dependencies; the entries below
+    # mirror its rdf/xml/dot/graph extras so that the conda package stays
+    # full-featured (conda has no equivalent of extras).
     - python >={{ python_min }}
-    - python-dateutil >=2.2
     - networkx >=2.0
     - pydot >=1.2.0
     - lxml >=3.3.5
-    - rdflib >=6.0.0,<8
+    - rdflib >=7.0.0,<8
 
 test:
   requires:
