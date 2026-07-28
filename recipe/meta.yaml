@@ -21,12 +21,14 @@ requirements:
     - wheel
 
   run:
+    # prov 3.0 has no unconditional runtime dependencies; the entries below
+    # mirror its rdf/xml/dot/graph extras so that the conda package stays
+    # full-featured (conda has no equivalent of extras).
     - python >={{ python_min }}
-    - python-dateutil >=2.2
     - networkx >=2.0
     - pydot >=1.2.0
     - lxml >=3.3.5
-    - rdflib >=6.0.0,<8
+    - rdflib >=7.0.0,<8
 
 test:
   requires:
