@@ -9,45 +9,72 @@ source:
   sha256: e3ecbf6345e46b1958b286bd1b090c5baffa942015ecf04b44a8cc63830f8a92
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  number: 1
 
-requirements:
-  host:
-    - pip
-    - python {{ python_min }}
-    - setuptools
-    - wheel
+outputs:
+  - name: prov-core
+    script: build_prov_core.sh
+    build:
+      noarch: python
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools
+        - wheel
+      run:
+        - python >={{ python_min }}
+    test:
+      requires:
+        - python {{ python_min }}
+        - pip
+      imports:
+        - prov
+        - prov.serializers
+        - prov.model
+      commands:
+        - pip check
+        - prov-convert --help
+        - prov-compare --help
+    about:
+      home: https://github.com/trungdong/prov
+      license: MIT
+      license_file: LICENSE
+      summary: A library for the W3C Provenance Data Model, supporting PROV-JSON, PROV-N and PROV-JSONLD, without the optional rdf/xml/dot/graph extras
 
-  run:
-    # prov 3.0 has no unconditional runtime dependencies; the entries below
-    # mirror its rdf/xml/dot/graph extras so that the conda package stays
-    # full-featured (conda has no equivalent of extras).
-    - python >={{ python_min }}
-    - networkx >=2.0
-    - pydot >=1.2.0
-    - lxml >=3.3.5
-    - rdflib >=7.0.0,<8
-
-test:
-  requires:
-    - python {{ python_min }}
-    - pip
-  imports:
-    - prov
-    - prov.serializers
-    - prov.model
-  commands:
-    - pip check
-    - prov-convert --help
-    - prov-compare --help
+  - name: prov
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('prov-core', exact=True) }}
+        - networkx >=2.0
+        - pydot >=1.2.0
+        - lxml >=3.3.5
+        - rdflib >=7.0.0,<8
+    test:
+      requires:
+        - python {{ python_min }}
+        - pip
+      imports:
+        - prov
+        - prov.serializers
+        - prov.model
+        - prov.dot
+        - prov.graph
+      commands:
+        - pip check
+        - prov-convert --help
+        - prov-compare --help
 
 about:
   home: https://github.com/trungdong/prov
   license: MIT
   license_file: LICENSE
-  summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML and PROV-O (RDF)
+  summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML, PROV-JSONLD and PROV-O (RDF)
 
 extra:
   recipe-maintainers:
