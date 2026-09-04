@@ -3,11 +3,24 @@ About prov-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/prov-feedstock/blob/main/LICENSE.txt)
 
+
+About prov
+----------
+
 Home: https://github.com/trungdong/prov
 
 Package license: MIT
 
-Summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML and PROV-O (RDF)
+Summary: A library for W3C Provenance Data Model supporting PROV-JSON, PROV-XML, PROV-JSONLD and PROV-O (RDF)
+
+About prov-core
+---------------
+
+Home: https://github.com/trungdong/prov
+
+Package license: MIT
+
+Summary: A library for the W3C Provenance Data Model, supporting PROV-JSON, PROV-N and PROV-JSONLD, without the optional rdf/xml/dot/graph extras
 
 Current build status
 ====================
@@ -29,6 +42,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-prov-green.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/prov.svg)](https://anaconda.org/conda-forge/prov) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-prov--core-green.svg)](https://anaconda.org/conda-forge/prov-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/prov-core.svg)](https://anaconda.org/conda-forge/prov-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/prov-core.svg)](https://anaconda.org/conda-forge/prov-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/prov-core.svg)](https://anaconda.org/conda-forge/prov-core) |
 
 Installing prov
 ===============
@@ -47,7 +61,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install prov
+conda install prov prov-core
 ```
 
 </details>
@@ -56,7 +70,7 @@ conda install prov
 <summary>With mamba</summary>
 
 ```
-mamba install prov
+mamba install prov prov-core
 ```
 
 </details>
@@ -66,9 +80,9 @@ mamba install prov
 
 ```
 # for adding to your local project
-pixi add prov
+pixi add prov prov-core
 # for installing globally
-pixi global install prov
+pixi global install prov prov-core
 ```
 
 </details>
