@@ -1,4 +1,4 @@
-{% set version = "3.1.0" %}
+{% set version = "3.2.1" %}
 
 package:
   name: prov
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/prov/prov-{{ version }}.tar.gz
-  sha256: e3ecbf6345e46b1958b286bd1b090c5baffa942015ecf04b44a8cc63830f8a92
+  sha256: ef116cd9c3ffa960a592d3f13430fd2950eecb703b68f1c1a48d328099eb0720
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: prov-core
