@@ -1,4 +1,4 @@
-{% set version = "3.2.3" %}
+{% set version = "3.3.0" %}
 
 package:
   name: prov
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/prov/prov-{{ version }}.tar.gz
-  sha256: b2ebcf3fa05c035933d9b11a277576ba87d09ef0cff3fd00230e3686b46fb9b0
+  sha256: 9a675b3b85f98c55c2ab8130e910fa81cf4a06942603d9f2a93a259f348d8d47
 
 build:
   number: 0
