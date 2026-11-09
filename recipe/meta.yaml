@@ -11,6 +11,25 @@ source:
 build:
   number: 0
 
+# Tests the prov output. conda-build skipped a test block placed inside that output.
+
+test:
+  requires:
+    - python {{ python_min }}
+    - pip
+  imports:
+    - prov
+    - prov.serializers
+    - prov.serializers.provrdf
+    - prov.serializers.provxml
+    - prov.model
+    - prov.dot
+    - prov.graph
+  commands:
+    - pip check
+    - prov-convert --help
+    - prov-compare --help
+
 outputs:
   - name: prov-core
     script: build_prov_core.sh
@@ -55,25 +74,6 @@ outputs:
         - pydot >=1.2.0
         - lxml >=3.3.5
         - rdflib >=7.0.0,<8
-
-# Tests the prov output. conda-build skipped a test block placed inside that output.
-
-test:
-  requires:
-    - python {{ python_min }}
-    - pip
-  imports:
-    - prov
-    - prov.serializers
-    - prov.serializers.provrdf
-    - prov.serializers.provxml
-    - prov.model
-    - prov.dot
-    - prov.graph
-  commands:
-    - pip check
-    - prov-convert --help
-    - prov-compare --help
 
 about:
   home: https://github.com/trungdong/prov
